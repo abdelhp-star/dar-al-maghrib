@@ -1,0 +1,106 @@
+import { Layout } from '@/components/layout/Layout';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { MessageSquare, Phone, Mail, Send } from 'lucide-react';
+import { toast } from 'sonner';
+
+export default function Contact() {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success('Message sent! We will get back to you soon.');
+    (e.target as HTMLFormElement).reset();
+  };
+
+  return (
+    <Layout>
+      <div className="bg-muted/30 py-12 border-b border-border">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-4">Get in Touch</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            Whether you're planning a special event or have a question about our menu, we'd love to hear from you.
+          </p>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-20">
+        <div className="flex flex-col lg:flex-row gap-16">
+          <div className="w-full lg:w-1/3 space-y-10">
+            <div>
+              <h2 className="font-serif text-3xl font-bold mb-6">Contact Information</h2>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Phone</h3>
+                    <p className="text-muted-foreground">+212 5 12 34 56 78</p>
+                    <p className="text-sm text-muted-foreground mt-1">Available during opening hours</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Email</h3>
+                    <p className="text-muted-foreground">hello@daralmaghrib.com</p>
+                    <p className="text-sm text-muted-foreground mt-1">We aim to reply within 24 hours</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-card p-8 rounded-2xl border border-border shadow-sm text-center">
+              <MessageSquare className="w-10 h-10 text-primary mx-auto mb-4" />
+              <h3 className="font-serif text-2xl font-bold mb-2">WhatsApp Us</h3>
+              <p className="text-muted-foreground mb-6">The fastest way to reach our support team.</p>
+              <a href="https://wa.me/212512345678" target="_blank" rel="noreferrer">
+                <Button className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white">
+                  Message on WhatsApp
+                </Button>
+              </a>
+            </div>
+          </div>
+
+          <div className="w-full lg:w-2/3">
+            <div className="bg-card p-8 md:p-10 rounded-3xl border border-border shadow-md">
+              <h2 className="font-serif text-3xl font-bold mb-8">Send a Message</h2>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Full Name</label>
+                    <Input required placeholder="Your name" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium">Email Address</label>
+                    <Input type="email" required placeholder="your@email.com" />
+                  </div>
+                </div>
+                
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Subject</label>
+                  <Input required placeholder="How can we help?" />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Message</label>
+                  <textarea 
+                    required
+                    className="w-full min-h-[150px] p-3 rounded-md border border-input bg-transparent shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                    placeholder="Type your message here..."
+                  ></textarea>
+                </div>
+
+                <Button type="submit" size="lg" className="w-full sm:w-auto">
+                  Send Message <Send className="w-4 h-4 ml-2" />
+                </Button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+}

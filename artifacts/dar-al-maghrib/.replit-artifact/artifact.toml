@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Dar Al Maghrib"
+version = "1.0.0"
+id = "artifacts/dar-al-maghrib"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19206
+
+[services.development]
+run = "pnpm --filter @workspace/dar-al-maghrib run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/dar-al-maghrib", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/dar-al-maghrib/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19206"
+BASE_PATH = "/"

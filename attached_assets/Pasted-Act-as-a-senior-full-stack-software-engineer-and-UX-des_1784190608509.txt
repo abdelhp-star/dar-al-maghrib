@@ -1,0 +1,320 @@
+Act as a senior full-stack software engineer and UX designer.
+
+Build a complete modern online food ordering platform for a Moroccan restaurant named "Dar Al Maghrib".
+
+The application must be professional, responsive, fast, and production-ready.
+
+Technology:
+- Frontend: React + Tailwind CSS
+- Backend: Node.js + Express
+- Database: PostgreSQL (or Supabase)
+- Authentication using JWT
+- Stripe payment integration (prepare it but allow test mode)
+- Deployable on Replit
+
+---------------------------------
+MAIN FEATURES
+---------------------------------
+
+Create a beautiful homepage with Moroccan colors (red, green, white, gold) and elegant modern UI.
+
+Pages:
+
+• Home
+• Menu
+• Categories
+• Offers
+• About Us
+• Contact
+• Shopping Cart
+• Checkout
+• Order Tracking
+• User Dashboard
+• Admin Dashboard
+
+---------------------------------
+MENU
+---------------------------------
+
+Create categories:
+
+Breakfast
+
+Tagines
+
+Couscous
+
+Pastilla
+
+Grilled Food
+
+Sandwiches
+
+Pizza
+
+Burgers
+
+Moroccan Desserts
+
+Juices
+
+Coffee
+
+Tea
+
+Soft Drinks
+
+Each menu item must include:
+
+- Image
+- Name
+- Description
+- Price
+- Calories
+- Preparation time
+- Ingredients
+- Spice level
+- Availability
+
+Allow searching and filtering.
+
+---------------------------------
+CUSTOMER FEATURES
+---------------------------------
+
+Users can:
+
+Create account
+
+Login
+
+Reset password
+
+Browse menu
+
+Search food
+
+Add to cart
+
+Increase/decrease quantity
+
+Choose delivery or pickup
+
+Choose payment method
+
+Pay online
+
+Pay cash on delivery
+
+Track order status
+
+Receive email confirmation
+
+View previous orders
+
+Save favorite meals
+
+Leave reviews and ratings
+
+---------------------------------
+CHECKOUT
+---------------------------------
+
+Collect:
+
+Customer name
+
+Phone number
+
+Email
+
+Delivery address
+
+Google Maps location
+
+Delivery notes
+
+Promo code
+
+Payment method
+
+Estimated delivery time
+
+Order summary
+
+---------------------------------
+ADMIN PANEL
+---------------------------------
+
+Administrator can:
+
+Login securely
+
+Manage menu
+
+Manage categories
+
+Manage customers
+
+Manage orders
+
+Update order status
+
+Manage coupons
+
+View statistics
+
+View revenue
+
+Manage offers
+
+Upload food images
+
+Manage delivery charges
+
+---------------------------------
+ORDER STATUS
+
+Pending
+
+Accepted
+
+Preparing
+
+Out for Delivery
+
+Delivered
+
+Cancelled
+
+---------------------------------
+DESIGN
+---------------------------------
+
+Create an elegant luxury Moroccan design.
+
+Use:
+
+Rounded cards
+
+Beautiful animations
+
+Icons
+
+Loading skeletons
+
+Dark mode
+
+Light mode
+
+Professional typography
+
+Responsive for desktop, tablet and mobile.
+
+---------------------------------
+LANGUAGES
+---------------------------------
+
+Support:
+
+English
+
+French
+
+Arabic (RTL)
+
+Allow users to switch language instantly.
+
+---------------------------------
+EXTRAS
+---------------------------------
+
+Add:
+
+WhatsApp ordering button
+
+Google Maps location
+
+Restaurant opening hours
+
+Social media links
+
+Push notifications
+
+Email notifications
+
+Promo banner
+
+Today's special meals
+
+Recommended meals
+
+Popular meals
+
+Best sellers
+
+Recently ordered
+
+Customer testimonials
+
+FAQ
+
+---------------------------------
+SECURITY
+---------------------------------
+
+Validate all inputs
+
+Protect API routes
+
+Encrypt passwords
+
+Prevent SQL Injection
+
+Prevent XSS
+
+Rate limiting
+
+---------------------------------
+SEO
+---------------------------------
+
+SEO optimized pages
+
+Meta tags
+
+Open Graph
+
+Sitemap
+
+Structured data
+
+---------------------------------
+PERFORMANCE
+---------------------------------
+
+Lazy loading
+
+Image optimization
+
+Caching
+
+Fast loading
+
+---------------------------------
+CODE QUALITY
+---------------------------------
+
+Use clean architecture.
+
+Separate frontend and backend.
+
+Write reusable components.
+
+Comment important code.
+
+Generate a README explaining installation, configuration and deployment.
+
+After finishing each major section, test it before continuing.
+
+If any requirement is unclear, ask me before proceeding.
