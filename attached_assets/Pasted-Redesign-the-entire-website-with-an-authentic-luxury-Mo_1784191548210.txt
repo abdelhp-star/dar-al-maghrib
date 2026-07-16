@@ -1,0 +1,139 @@
+Redesign the entire website with an authentic luxury Moroccan restaurant theme.
+
+BACKGROUND
+
+Replace the current background with a full-screen cinematic hero section.
+
+Instead of the existing background image, use a high-quality looping background video showing authentic Moroccan cuisine, such as:
+
+• Fresh Couscous being prepared
+• Chicken Tagine cooking
+• Beef Tagine with vegetables
+• Tangia Marrakchia
+• Moroccan Mint Tea being poured
+• Fresh Msemen being cooked
+• Moroccan pastries
+• Traditional Moroccan spices
+• Traditional Moroccan dining table
+• Moroccan lanterns
+• Moroccan riad atmosphere
+
+The video should:
+- autoplay
+- loop infinitely
+- be muted
+- be optimized for fast loading
+- include a dark overlay (40–60%) so text remains readable
+- gracefully fall back to a static image if the video cannot load.
+
+Use smooth fade-in animations when the page loads.
+
+------------------------------------------------
+
+MENU IMAGES
+
+Replace every generic food image with authentic Moroccan dishes only.
+
+Use professional high-resolution images.
+
+Include dishes such as:
+
+Breakfast
+- Msemen
+- Baghrir
+- Harcha
+- Beghrir
+- Moroccan Omelette
+
+Tagines
+- Chicken Tagine with Preserved Lemon & Olives
+- Beef Tagine with Prunes
+- Lamb Tagine
+- Vegetable Tagine
+- Fish Tagine
+- Kefta Tagine
+
+Couscous
+- Royal Couscous
+- Seven Vegetables Couscous
+- Tfaya Couscous
+- Chicken Couscous
+- Beef Couscous
+
+Traditional Meals
+- Tangia Marrakchia
+- Rfissa
+- Seffa Medfouna
+- Harira
+- Bissara
+
+Street Food
+- Maakouda
+- Brochettes
+- Moroccan Sandwiches
+
+Pastries
+- Chebakia
+- Kaab El Ghazal
+- Ghriba
+- Briouat
+- Sellou
+
+Drinks
+- Moroccan Mint Tea
+- Fresh Orange Juice
+- Avocado Smoothie
+- Lemon Mint Juice
+- Moroccan Coffee
+
+Desserts
+- Jawhara
+- Fruit Platters
+- Homemade Yogurt
+
+------------------------------------------------
+
+STYLE
+
+The overall design should reflect Morocco.
+
+Use:
+- Moroccan zellige patterns
+- Traditional geometric decorations
+- Warm lighting
+- Elegant shadows
+- Gold accents
+- Dark green (#006233)
+- Moroccan red (#C1272D)
+- Gold (#C8A646)
+- Cream (#F8F4EC)
+
+Buttons should have rounded corners and subtle hover animations.
+
+------------------------------------------------
+
+TYPOGRAPHY
+
+Use elegant fonts inspired by Moroccan luxury restaurants.
+
+Headings should be bold and sophisticated.
+
+------------------------------------------------
+
+ANIMATIONS
+
+Add smooth animations:
+
+- Food cards slightly zoom on hover.
+- Images fade in while scrolling.
+- Hero text slides up.
+- Buttons animate smoothly.
+- Menu categories have subtle transitions.
+
+------------------------------------------------
+
+USER EXPERIENCE
+
+The homepage should immediately make visitors feel like they are entering a premium Moroccan restaurant.
+
+The atmosphere should be warm, luxurious, authentic, and inviting.
