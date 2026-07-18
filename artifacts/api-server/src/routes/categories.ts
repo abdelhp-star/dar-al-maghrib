@@ -5,7 +5,7 @@ import { authenticate, requireAdmin } from "../middlewares/auth";
 
 const router = Router();
 
-// GET /api/categories
+// GET /api/categories — returns only active categories
 router.get("/categories", async (req, res) => {
   try {
     const categories = await db.select({
@@ -18,7 +18,7 @@ router.get("/categories", async (req, res) => {
       sortOrder: categoriesTable.sortOrder,
       active: categoriesTable.active,
       itemCount: sql<number>`(SELECT COUNT(*) FROM menu_items WHERE category_id = ${categoriesTable.id} AND available = true)::int`,
-    }).from(categoriesTable).orderBy(categoriesTable.sortOrder);
+    }).from(categoriesTable).where(eq(categoriesTable.active, true)).orderBy(categoriesTable.sortOrder);
     res.json(categories);
   } catch (err) {
     req.log.error(err);

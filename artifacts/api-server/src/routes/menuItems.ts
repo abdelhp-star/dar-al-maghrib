@@ -54,13 +54,13 @@ router.get("/menu-items/featured", async (req, res) => {
   }
 });
 
-// GET /api/menu-items
+// GET /api/menu-items — returns only available items by default; pass available=false to include hidden
 router.get("/menu-items", async (req, res) => {
   try {
     const { categoryId, search, available, spiceLevel } = req.query;
     const conditions: any[] = [];
     if (categoryId) conditions.push(eq(menuItemsTable.categoryId, parseInt(categoryId as string)));
-    if (available === "true") conditions.push(eq(menuItemsTable.available, true));
+    if (available !== "false") conditions.push(eq(menuItemsTable.available, true));
     if (spiceLevel) conditions.push(eq(menuItemsTable.spiceLevel, spiceLevel as any));
 
     const items = await db.select({
