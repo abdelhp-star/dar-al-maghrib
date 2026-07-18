@@ -73,7 +73,7 @@ export default function AdminMenu() {
                     </td>
                     <td className="p-4 font-medium">{item.name}</td>
                     <td className="p-4 text-sm">{item.category?.name || item.categoryId}</td>
-                    <td className="p-4 font-bold">${item.price.toFixed(2)}</td>
+                    <td className="p-4 font-bold">{Math.round(item.price)} MAD</td>
                     <td className="p-4">
                       <span className={`px-2 py-1 rounded text-xs font-bold ${item.available ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
                         {item.available ? 'Active' : 'Sold Out'}

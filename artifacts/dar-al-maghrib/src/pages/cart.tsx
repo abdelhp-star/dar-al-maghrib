@@ -1,4 +1,5 @@
 import { Layout } from '@/components/layout/Layout';
+import { madToAed } from '@/lib/price';
 import { useCartContext } from '@/contexts/cart';
 import { Button } from '@/components/ui/button';
 import { Minus, Plus, Trash2, ArrowRight, ShoppingBag } from 'lucide-react';
@@ -79,7 +80,10 @@ export default function Cart() {
                   )}
                   <div className="flex-1">
                     <h3 className="font-bold text-lg">{getLocalized(item.menuItem, 'name')}</h3>
-                    <p className="text-primary font-bold mt-1">${item.menuItem?.price.toFixed(2)}</p>
+                    <div className="mt-1 leading-tight">
+                      <div className="text-primary font-bold">{Math.round(item.menuItem?.price ?? 0)} MAD</div>
+                      <div className="text-xs text-muted-foreground">{madToAed(item.menuItem?.price ?? 0)} AED</div>
+                    </div>
                   </div>
                   
                   <div className="flex items-center gap-4">
@@ -118,15 +122,24 @@ export default function Cart() {
               <div className="space-y-3 text-sm mb-6">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Subtotal</span>
-                  <span className="font-medium">${calculatedSubtotal.toFixed(2)}</span>
+                  <div className="text-right leading-tight">
+                    <div className="font-medium">{Math.round(calculatedSubtotal)} MAD</div>
+                    <div className="text-xs text-muted-foreground">{madToAed(calculatedSubtotal)} AED</div>
+                  </div>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Delivery Fee</span>
-                  <span className="font-medium">${deliveryFee.toFixed(2)}</span>
+                  <div className="text-right leading-tight">
+                    <div className="font-medium">{Math.round(deliveryFee)} MAD</div>
+                    <div className="text-xs text-muted-foreground">{madToAed(deliveryFee)} AED</div>
+                  </div>
                 </div>
                 <div className="border-t border-border pt-3 mt-3 flex justify-between items-center">
                   <span className="font-bold text-base">Total</span>
-                  <span className="font-bold text-2xl text-primary">${total.toFixed(2)}</span>
+                  <div className="text-right leading-tight">
+                    <div className="font-bold text-2xl text-primary">{Math.round(total)} MAD</div>
+                    <div className="text-sm text-muted-foreground">{madToAed(total)} AED</div>
+                  </div>
                 </div>
               </div>
 

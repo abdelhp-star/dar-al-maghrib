@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { madToAed } from '@/lib/price';
 import { Link } from 'wouter';
 import { useI18n } from '@/contexts/i18n';
 import { useGetFeaturedItems, useGetOffers, useGetReviews } from '@workspace/api-client-react';
@@ -82,8 +83,9 @@ export default function Home() {
                     alt={item.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold shadow-md">
-                    ${item.price.toFixed(2)}
+                  <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold shadow-md text-center">
+                    <div>{Math.round(item.price)} MAD</div>
+                    <div className="text-xs font-normal opacity-90">{madToAed(item.price)} AED</div>
                   </div>
                 </div>
                 <div className="p-6">

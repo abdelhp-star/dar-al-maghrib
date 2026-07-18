@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { madToAed } from '@/lib/price';
 import { useRoute, useLocation } from 'wouter';
 import { useGetMenuItem, useGetReviews, useAddToCart } from '@workspace/api-client-react';
 import { Layout } from '@/components/layout/Layout';
@@ -101,7 +102,10 @@ export default function MenuItemDetail() {
             </h1>
             
             <div className="flex items-center gap-6 mb-6">
-              <span className="text-3xl font-bold text-foreground">${item.price.toFixed(2)}</span>
+              <div className="leading-tight">
+                <div className="text-3xl font-bold text-foreground">{Math.round(item.price)} MAD</div>
+                <div className="text-sm text-muted-foreground">{madToAed(item.price)} AED</div>
+              </div>
               {item.avgRating && (
                 <div className="flex items-center gap-1 bg-accent/10 px-3 py-1 rounded-full text-accent font-bold">
                   <Star className="w-4 h-4 fill-current" /> {item.avgRating.toFixed(1)} ({item.reviewCount || 0})
@@ -170,7 +174,7 @@ export default function MenuItemDetail() {
                   onClick={handleAddToCart}
                 >
                   <ShoppingBag className="w-5 h-5 mr-2" />
-                  {item.available ? `Add to Cart - $${(item.price * quantity).toFixed(2)}` : 'Sold Out'}
+                  {item.available ? `Add to Cart - ${Math.round(item.price * quantity)} MAD` : 'Sold Out'}
                 </Button>
               </div>
             </div>

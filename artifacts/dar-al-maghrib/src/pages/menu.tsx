@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { madToAed } from '@/lib/price';
 import { useGetCategories, useGetMenuItems, useAddToCart } from '@workspace/api-client-react';
 import { useI18n } from '@/contexts/i18n';
 import { useCartContext } from '@/contexts/cart';
@@ -161,7 +162,10 @@ export default function Menu() {
                           {getLocalized(item, 'description')}
                         </p>
                         <div className="flex items-center justify-between mt-auto">
-                          <span className="text-lg font-bold text-primary">${item.price.toFixed(2)}</span>
+                          <div className="leading-tight">
+                            <div className="text-lg font-bold text-primary">{Math.round(item.price)} MAD</div>
+                            <div className="text-xs text-muted-foreground">{madToAed(item.price)} AED</div>
+                          </div>
                           <Button 
                             size="sm" 
                             className="rounded-full px-4"
