@@ -1,0 +1,103 @@
+Do not redesign the website.
+
+Do not modify any React components.
+
+Do not modify the database directly.
+
+Use the project's canonical data source:
+scripts/src/sync-prod-menu.ts
+
+Task:
+
+Add the following two new menu items to the "Couscous" category.
+
+-------------------------------------------------
+1. Moroccan Couscous with Vegetables & Meat
+-------------------------------------------------
+
+English Name:
+Moroccan Couscous with Vegetables & Meat
+
+French Name:
+Couscous Marocain aux Légumes et à la Viande
+
+Arabic Name:
+الكسكس المغربي بالخضر واللحم
+
+Image:
+Use the image that I uploaded to Replit.
+
+Copy it into:
+public/dishes/
+
+Filename:
+couscous-vegetables-meat.jpg
+
+Descriptions:
+
+English:
+Traditional Moroccan couscous served with tender meat, seasonal vegetables and flavorful homemade broth.
+
+French:
+Couscous marocain traditionnel servi avec de la viande tendre, des légumes de saison et un bouillon maison savoureux.
+
+Arabic:
+كسكس مغربي تقليدي يقدم مع اللحم الطري والخضر الموسمية ومرق مغربي غني بالنكهات.
+
+-------------------------------------------------
+2. Couscous Tfaya
+-------------------------------------------------
+
+English Name:
+Couscous Tfaya
+
+French Name:
+Couscous Tfaya
+
+Arabic Name:
+الكسكس بالتفاية
+
+Image:
+Use the image that I uploaded to Replit.
+
+Copy it into:
+public/dishes/
+
+Filename:
+couscous-tfaya.jpg
+
+Descriptions:
+
+English:
+Traditional Moroccan couscous topped with sweet caramelized onions, raisins and aromatic spices, served with tender meat.
+
+French:
+Couscous marocain traditionnel garni de tfaya, un mélange d'oignons caramélisés, de raisins secs et d'épices, servi avec une viande tendre.
+
+Arabic:
+كسكس مغربي بالتفاية، مزين بالبصل المعسل والزبيب والتوابل المغربية الأصيلة ويقدم مع اللحم.
+
+-------------------------------------------------
+
+For BOTH dishes:
+
+- Category = Couscous
+- Available = true
+- Create new MENU_ITEMS entries in scripts/src/sync-prod-menu.ts
+- Use the uploaded images
+- Store the images in public/dishes/
+- Set the image URLs to the local image paths
+- Set prices in MAD consistent with the other couscous dishes
+- Keep the automatic AED conversion already implemented
+- Populate all required fields (names, descriptions, translations, image, price, availability, category)
+
+Do not modify any existing menu items.
+
+After updating the canonical data:
+
+1. Synchronize the development database so Preview matches.
+2. Verify that both dishes appear in the Couscous category.
+3. Verify that both uploaded images display correctly.
+4. Confirm that no existing menu items were modified.
+5. Do not publish automatically.
+6. Stop and wait for my approval before publishing.
