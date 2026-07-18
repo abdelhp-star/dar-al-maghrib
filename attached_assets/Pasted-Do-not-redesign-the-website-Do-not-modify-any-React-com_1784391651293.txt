@@ -1,0 +1,101 @@
+Do not redesign the website.
+
+Do not modify any React components.
+
+Do not modify the database directly.
+
+Use the project's canonical data source:
+scripts/src/sync-prod-menu.ts
+
+Task:
+
+Add the following two new menu items to the "Tagines" category.
+
+-------------------------------------------------
+1. Lamb Tagine with Raisins & Caramelized Onions
+-------------------------------------------------
+
+English Name:
+Lamb Tagine with Raisins & Caramelized Onions
+
+French Name:
+Tajine d'Agneau aux Raisins et Oignons Caramélisés
+
+Arabic Name:
+طاجين الغنم بالزبيب والبصل المعسل
+
+Image:
+Use the image that I uploaded to Replit.
+
+Copy it into:
+public/dishes/
+
+Filename:
+lamb-tagine-raisins-onions.jpg
+
+Descriptions:
+
+English:
+Slow-cooked Moroccan lamb tagine with sweet raisins, caramelized onions and authentic Moroccan spices.
+
+French:
+Tajine marocain d'agneau mijoté aux raisins, oignons caramélisés et épices traditionnelles.
+
+Arabic:
+طاجين غنم مغربي مطهو ببطء مع الزبيب والبصل المعسل والتوابل المغربية الأصيلة.
+
+-------------------------------------------------
+2. Moroccan Fish Tagine
+-------------------------------------------------
+
+English Name:
+Moroccan Fish Tagine
+
+French Name:
+Tajine de Poisson Marocain
+
+Arabic Name:
+طاجين السمك المغربي
+
+Image:
+Use the image that I uploaded to Replit.
+
+Copy it into:
+public/dishes/
+
+Filename:
+moroccan-fish-tagine.jpg
+
+Descriptions:
+
+English:
+Traditional Moroccan fish tagine prepared with fresh fish, vegetables, preserved lemon, olives and authentic Moroccan spices.
+
+French:
+Tajine marocain de poisson préparé avec du poisson frais, des légumes, du citron confit, des olives et des épices marocaines.
+
+Arabic:
+طاجين سمك مغربي تقليدي محضر بالسمك الطازج والخضر والليمون المصبر والزيتون والتوابل المغربية الأصيلة.
+
+-------------------------------------------------
+
+For BOTH dishes:
+
+- Category = Tagines
+- Available = true
+- Create new MENU_ITEMS entries in scripts/src/sync-prod-menu.ts
+- Use the uploaded images
+- Set Image URL to the new local image path
+- Set prices in MAD consistent with the other tagines
+- Keep the automatic AED conversion already implemented
+- Populate all required fields
+- Do not modify any existing menu items.
+
+After updating the canonical data:
+
+1. Synchronize the development database so Preview matches.
+2. Verify that both dishes appear in the Tagines category.
+3. Verify that both uploaded images display correctly.
+4. Confirm that no existing dishes were modified.
+5. Do not publish automatically.
+6. Stop and wait for my approval before publishing.
