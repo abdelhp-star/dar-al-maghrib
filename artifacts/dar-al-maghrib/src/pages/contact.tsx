@@ -2,18 +2,11 @@ import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { MessageSquare, Phone, Mail, Send, MapPin, Navigation } from 'lucide-react';
-import { toast } from 'sonner';
 
 const GMAPS_URL = 'https://maps.app.goo.gl/9F5eFoenw2R6Pwyf7';
 const GMAPS_EMBED = 'https://maps.google.com/maps?q=32.2901579,-9.2321418&z=16&output=embed';
 
 export default function Contact() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success('Message sent! We will get back to you soon.');
-    (e.target as HTMLFormElement).reset();
-  };
-
   return (
     <Layout>
       <div className="bg-muted/30 py-12 border-b border-border">
@@ -72,7 +65,7 @@ export default function Contact() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
                     <Mail className="w-5 h-5" />
@@ -101,26 +94,43 @@ export default function Contact() {
           <div className="w-full lg:w-2/3">
             <div className="bg-card p-8 md:p-10 rounded-3xl border border-border shadow-md">
               <h2 className="font-serif text-3xl font-bold mb-8">Send a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form
+                action="https://formsubmit.co/abdelhp@gmail.com"
+                method="POST"
+                className="space-y-6"
+              >
+                {/* FormSubmit hidden configuration fields */}
+                <input type="hidden" name="_subject" value="New message from Dar Al Maghrib website" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Full Name</label>
-                    <Input required placeholder="Your name" />
+                    <label htmlFor="name" className="text-sm font-medium">Full Name</label>
+                    <Input
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Your name"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Email Address</label>
-                    <Input type="email" required placeholder="your@email.com" />
+                    <label htmlFor="email" className="text-sm font-medium">Email Address</label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="your@email.com"
+                    />
                   </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Subject</label>
-                  <Input required placeholder="How can we help?" />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Message</label>
-                  <textarea 
+                  <label htmlFor="message" className="text-sm font-medium">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
                     required
                     className="w-full min-h-[150px] p-3 rounded-md border border-input bg-transparent shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                     placeholder="Type your message here..."
