@@ -34,7 +34,7 @@ export default function Cart() {
     return acc + ((item.menuItem?.price || 0) * item.quantity);
   }, 0);
 
-  const deliveryFee = 5.00;
+  const deliveryFee = 15; // matches DELIVERY_FEE in api-server/src/routes/orders.ts
   const total = calculatedSubtotal + (calculatedSubtotal > 0 ? deliveryFee : 0);
 
   if (items.length === 0) {
