@@ -37,6 +37,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.address': 'New Medina, Safi, Morocco',
     'about.find_us': 'Find Us Here',
     'about.find_us_desc': 'Interactive map will load here',
+    'about.get_directions': 'Get Directions',
   },
   fr: {
     'nav.home': 'Accueil',
@@ -65,6 +66,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.address': 'Nouvelle Médina, Safi, Maroc',
     'about.find_us': 'Retrouvez-nous ici',
     'about.find_us_desc': 'La carte interactive se chargera ici',
+    'about.get_directions': 'Obtenir l\'itinéraire',
   },
   ar: {
     'nav.home': 'الرئيسية',
@@ -93,6 +95,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.address': 'المدينة الجديدة، آسفي، المغرب',
     'about.find_us': 'اعثر علينا هنا',
     'about.find_us_desc': 'سيتم تحميل الخريطة التفاعلية هنا',
+    'about.get_directions': 'احصل على الاتجاهات',
   }
 };
 

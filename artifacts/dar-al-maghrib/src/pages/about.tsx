@@ -1,6 +1,9 @@
 import { Layout } from '@/components/layout/Layout';
-import { MapPin, Clock, Phone } from 'lucide-react';
+import { MapPin, Clock, Phone, Navigation } from 'lucide-react';
 import { useI18n } from '@/contexts/i18n';
+
+const GMAPS_URL = 'https://maps.app.goo.gl/9F5eFoenw2R6Pwyf7';
+const GMAPS_EMBED = 'https://maps.google.com/maps?q=32.2901579,-9.2321418&z=16&output=embed';
 
 export default function About() {
   const { t, dir } = useI18n();
@@ -57,7 +60,15 @@ export default function About() {
               <MapPin className="w-8 h-8" />
             </div>
             <h3 className="font-serif text-2xl font-bold mb-4">{t('about.location_title')}</h3>
-            <p className="text-muted-foreground">{t('about.address')}</p>
+            <a
+              href={GMAPS_URL}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open location in Google Maps"
+              className="text-muted-foreground hover:text-primary transition-colors underline-offset-4 hover:underline"
+            >
+              {t('about.address')}
+            </a>
           </div>
 
           <div className="bg-card p-8 rounded-2xl border border-border text-center shadow-sm">
@@ -72,14 +83,36 @@ export default function About() {
           </div>
         </div>
 
-        {/* Map Placeholder */}
-        <div className="w-full h-96 bg-muted rounded-3xl border border-border overflow-hidden relative shadow-inner">
-          <div className="absolute inset-0 flex items-center justify-center bg-background/50 backdrop-blur-sm">
-            <div className="text-center">
-              <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="font-serif text-2xl font-bold">{t('about.find_us')}</h3>
-              <p className="text-muted-foreground">{t('about.find_us_desc')}</p>
-            </div>
+        {/* Map Section */}
+        <div className="space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <h3 className="font-serif text-2xl font-bold flex items-center gap-2">
+              <MapPin className="w-6 h-6 text-primary" />
+              {t('about.find_us')}
+            </h3>
+            <a
+              href={GMAPS_URL}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Get directions to Dar Al Maghrib on Google Maps"
+            >
+              <button className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-border bg-card hover:bg-primary hover:text-primary-foreground transition-colors text-sm font-medium shadow-sm">
+                <Navigation className="w-4 h-4" />
+                {t('about.get_directions')}
+              </button>
+            </a>
+          </div>
+          <div className="w-full h-96 rounded-3xl border border-border overflow-hidden shadow-inner">
+            <iframe
+              title="Dar Al Maghrib — New Medina, Safi, Morocco"
+              aria-label="Google Maps showing Dar Al Maghrib restaurant in New Medina, Safi, Morocco"
+              src={GMAPS_EMBED}
+              width="100%"
+              height="100%"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="border-0 w-full h-full"
+            />
           </div>
         </div>
       </div>

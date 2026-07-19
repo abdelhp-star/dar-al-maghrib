@@ -1,8 +1,11 @@
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { MessageSquare, Phone, Mail, Send } from 'lucide-react';
+import { MessageSquare, Phone, Mail, Send, MapPin, Navigation } from 'lucide-react';
 import { toast } from 'sonner';
+
+const GMAPS_URL = 'https://maps.app.goo.gl/9F5eFoenw2R6Pwyf7';
+const GMAPS_EMBED = 'https://maps.google.com/maps?q=32.2901579,-9.2321418&z=16&output=embed';
 
 export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
@@ -34,8 +37,39 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">Phone</h3>
-                    <p className="text-muted-foreground">+212 5 12 34 56 78</p>
+                    <p className="text-muted-foreground">+212 616-855779</p>
                     <p className="text-sm text-muted-foreground mt-1">Available during opening hours</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary flex-shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Address</h3>
+                    <a
+                      href={GMAPS_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="Open location in Google Maps"
+                      className="text-muted-foreground hover:text-primary transition-colors underline-offset-4 hover:underline"
+                    >
+                      New Medina, Safi, Morocco
+                    </a>
+                    <div className="mt-2">
+                      <a
+                        href={GMAPS_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Get directions to Dar Al Maghrib on Google Maps"
+                      >
+                        <button className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-card hover:bg-primary hover:text-primary-foreground transition-colors text-xs font-medium">
+                          <Navigation className="w-3 h-3" />
+                          Get Directions
+                        </button>
+                      </a>
+                    </div>
                   </div>
                 </div>
                 
