@@ -1,12 +1,14 @@
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { MessageSquare, Phone, Mail, Send, MapPin, Navigation } from 'lucide-react';
+import { MessageSquare, Phone, Mail, Send, MapPin, Navigation, CheckCircle2 } from 'lucide-react';
 
 const GMAPS_URL = 'https://maps.app.goo.gl/9F5eFoenw2R6Pwyf7';
 const GMAPS_EMBED = 'https://maps.google.com/maps?q=32.2901579,-9.2321418&z=16&output=embed';
 
 export default function Contact() {
+  const success = new URLSearchParams(window.location.search).get('success') === 'true';
+
   return (
     <Layout>
       <div className="bg-muted/30 py-12 border-b border-border">
@@ -19,6 +21,20 @@ export default function Contact() {
       </div>
 
       <div className="container mx-auto px-4 py-20">
+
+        {/* Success alert */}
+        {success && (
+          <div className="mb-10 flex items-start gap-4 rounded-2xl border border-green-200 bg-green-50 px-6 py-5 text-green-800 shadow-sm">
+            <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-0.5 text-green-600" />
+            <div>
+              <p className="font-semibold text-base leading-snug">Message sent successfully!</p>
+              <p className="text-sm mt-1 text-green-700">
+                Thank you! Your message has been sent successfully. We'll contact you soon.
+              </p>
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-col lg:flex-row gap-16">
           <div className="w-full lg:w-1/3 space-y-10">
             <div>
@@ -103,6 +119,7 @@ export default function Contact() {
                 <input type="hidden" name="_subject" value="New message from Dar Al Maghrib website" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
+                <input type="hidden" name="_next" value="https://dar-al-maghrib.netlify.app/contact?success=true" />
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
