@@ -57,11 +57,7 @@ export default function About() {
               <MapPin className="w-8 h-8" />
             </div>
             <h3 className="font-serif text-2xl font-bold mb-4">{t('about.location_title')}</h3>
-            <p className="text-muted-foreground">
-              123 Medina Street<br />
-              Casablanca, 10000<br />
-              Morocco
-            </p>
+            <p className="text-muted-foreground">{t('about.address')}</p>
           </div>
 
           <div className="bg-card p-8 rounded-2xl border border-border text-center shadow-sm">
@@ -70,7 +66,7 @@ export default function About() {
             </div>
             <h3 className="font-serif text-2xl font-bold mb-4">{t('about.contact_title')}</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>+212 5 12 34 56 78</li>
+              <li>+212 616-855779</li>
               <li>hello@daralmaghrib.com</li>
             </ul>
           </div>

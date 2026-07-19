@@ -34,6 +34,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.hours_3': 'Sunday: 12:00 PM – 9:00 PM',
     'about.location_title': 'Location',
     'about.contact_title': 'Contact',
+    'about.address': 'New Medina, Safi, Morocco',
     'about.find_us': 'Find Us Here',
     'about.find_us_desc': 'Interactive map will load here',
   },
@@ -61,6 +62,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.hours_3': 'Dimanche : 12h00 – 21h00',
     'about.location_title': 'Emplacement',
     'about.contact_title': 'Contact',
+    'about.address': 'Nouvelle Médina, Safi, Maroc',
     'about.find_us': 'Retrouvez-nous ici',
     'about.find_us_desc': 'La carte interactive se chargera ici',
   },
@@ -88,6 +90,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.hours_3': 'الأحد: 12:00 م – 9:00 م',
     'about.location_title': 'الموقع',
     'about.contact_title': 'تواصل معنا',
+    'about.address': 'المدينة الجديدة، آسفي، المغرب',
     'about.find_us': 'اعثر علينا هنا',
     'about.find_us_desc': 'سيتم تحميل الخريطة التفاعلية هنا',
   }
