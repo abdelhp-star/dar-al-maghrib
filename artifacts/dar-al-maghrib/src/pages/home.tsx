@@ -42,8 +42,8 @@ export default function Home() {
               className="absolute inset-0 w-full h-full object-cover"
             />
           </video>
-          {/* Dark overlay 45% */}
-          <div className="absolute inset-0 bg-black/45 dark:bg-black/65"></div>
+          {/* Overlay 15–20% so city visuals stay bright */}
+          <div className="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
         </div>
         
         <div className="container relative z-10 text-center px-4">

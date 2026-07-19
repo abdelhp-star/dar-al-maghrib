@@ -1,0 +1,55 @@
+The current landing page background video is not satisfactory.
+
+Please replace it with a much brighter, more vibrant cinematic video that truly represents the old city of Safi, Morocco.
+
+Requirements:
+
+- Use a high-resolution 4K or Full HD video.
+- The video must be bright, colorful and welcoming.
+- Record during daylight or golden hour, not at night.
+- Reduce the dark overlay to around 15–20% so visitors can clearly see the city while keeping the text readable.
+- Keep the existing hero text, buttons and layout unchanged.
+
+The video should prominently feature authentic landmarks and scenes of Safi, including:
+
+• The Old Medina of Safi with its narrow historic streets
+• Bab Chaaba and the historic gates
+• Ksar El Bahr (Portuguese Sea Castle)
+• The Great Mosque and surrounding old architecture
+• The traditional pottery district with craftsmen at work
+• The National Ceramics Museum
+• Colorful ceramic shops
+• The fishing port with the iconic blue fishing boats
+• Fresh fish market atmosphere
+• The Atlantic Ocean and Corniche promenade
+• Ocean waves crashing against the cliffs
+• Panoramic views of the old city from above
+• Warm Moroccan sunlight and blue skies
+• Palm trees and traditional Moroccan architecture
+• Families walking through the Medina
+• Authentic Moroccan daily life
+
+The atmosphere should feel:
+- Warm
+- Authentic
+- Traditional
+- Inviting
+- Peaceful
+- Proud of Moroccan heritage
+
+Avoid:
+- Dark color grading
+- Heavy shadows
+- Night scenes
+- Empty streets
+- Generic drone footage
+- Modern buildings dominating the scene
+- AI-generated unrealistic landscapes
+- Text or logos in the video
+
+The first 10 seconds should immediately establish Safi as a beautiful historic Moroccan coastal city before transitioning to the restaurant experience.
+
+If a better quality video is available, replace the existing hero video with it while preserving all existing website functionality.
+
+Do not modify anything else.
+Stop before publishing and let me preview the result.
