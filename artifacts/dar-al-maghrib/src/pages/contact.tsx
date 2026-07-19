@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,7 +8,15 @@ const GMAPS_URL = 'https://maps.app.goo.gl/9F5eFoenw2R6Pwyf7';
 const GMAPS_EMBED = 'https://maps.google.com/maps?q=32.2901579,-9.2321418&z=16&output=embed';
 
 export default function Contact() {
-  const success = new URLSearchParams(window.location.search).get('success') === 'true';
+  const [success, setSuccess] = useState(
+    () => new URLSearchParams(window.location.search).get('success') === 'true'
+  );
+
+  useEffect(() => {
+    if (success) {
+      history.replaceState(null, '', window.location.pathname);
+    }
+  }, [success]);
 
   return (
     <Layout>
