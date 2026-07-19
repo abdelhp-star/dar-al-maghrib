@@ -1,14 +1,25 @@
 import { Router } from "express";
 import { db, offersTable } from "@workspace/db";
 import { eq, desc } from "drizzle-orm";
-import { authenticate, requireAdmin } from "../middlewares/auth";
+import { authenticate, requireAdmin, verifyToken } from "../middlewares/auth";
 
 const router = Router();
 
-// GET /api/offers — returns active offers; pass ?all=true to include inactive (admin)
+// GET /api/offers — returns active offers; pass ?all=true to include inactive (admin-only)
 router.get("/offers", async (req, res) => {
   try {
-    const includeAll = req.query.all === "true";
+    const wantsAll = req.query.all === "true";
+    // Only authenticated admins may request inactive offers
+    let includeAll = false;
+    if (wantsAll) {
+      const authHeader = req.headers.authorization;
+      if (authHeader?.startsWith("Bearer ")) {
+        try {
+          const payload = verifyToken(authHeader.slice(7));
+          if ((payload as any).role === "admin") includeAll = true;
+        } catch { /* not authenticated — fall through to active-only */ }
+      }
+    }
     const offers = await db.select().from(offersTable)
       .where(includeAll ? undefined : eq(offersTable.active, true))
       .orderBy(desc(offersTable.createdAt));

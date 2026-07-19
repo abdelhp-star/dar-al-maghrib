@@ -1,14 +1,25 @@
 import { Router } from "express";
 import { db, categoriesTable, menuItemsTable } from "@workspace/db";
 import { eq, sql } from "drizzle-orm";
-import { authenticate, requireAdmin } from "../middlewares/auth";
+import { authenticate, requireAdmin, verifyToken } from "../middlewares/auth";
 
 const router = Router();
 
-// GET /api/categories — returns active categories; pass ?all=true to include inactive (admin)
+// GET /api/categories — returns active categories; pass ?all=true to include inactive (admin-only)
 router.get("/categories", async (req, res) => {
   try {
-    const includeAll = req.query.all === "true";
+    const wantsAll = req.query.all === "true";
+    // Only authenticated admins may request inactive categories
+    let includeAll = false;
+    if (wantsAll) {
+      const authHeader = req.headers.authorization;
+      if (authHeader?.startsWith("Bearer ")) {
+        try {
+          const payload = verifyToken(authHeader.slice(7));
+          if ((payload as any).role === "admin") includeAll = true;
+        } catch { /* not authenticated — fall through to active-only */ }
+      }
+    }
     const categories = await db.select({
       id: categoriesTable.id,
       name: categoriesTable.name,
