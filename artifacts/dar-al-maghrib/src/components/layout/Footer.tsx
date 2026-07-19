@@ -38,11 +38,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                123 Medina Street, Casablance, 10000
+                New Medina, Safi, Morocco
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                +212 5 12 34 56 78
+                +212 616-855779
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
