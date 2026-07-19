@@ -25,4 +25,3 @@ channel = "stable-25_05"
 [userenv]
 
 [userenv.production]
-ADMIN_PASSWORD_RESET_HASH = "$2b$10$trzCFcqHhFtS.rwt5/u8M.wUphB/ozDsNGrJO5flCnU7Qhs8dIHYa"

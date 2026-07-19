@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { WhatsAppFloat } from '@/components/WhatsAppButton';
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
@@ -15,6 +16,9 @@ export function Layout({ children }: { children: ReactNode }) {
         </main>
         <Footer />
       </div>
+
+      {/* Floating WhatsApp button — public pages only (admin uses AdminLayout) */}
+      <WhatsAppFloat />
     </div>
   );
 }

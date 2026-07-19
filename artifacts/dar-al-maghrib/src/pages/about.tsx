@@ -1,5 +1,8 @@
 import { Layout } from '@/components/layout/Layout';
 import { MapPin, Clock, Phone, Navigation } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/WhatsAppButton';
+
+const WA_URL = 'https://wa.me/212616855779?text=Hello%20Dar%20Al%20Maghrib!%20I%20would%20like%20to%20place%20an%20order.';
 import { useI18n } from '@/contexts/i18n';
 
 const GMAPS_URL = 'https://maps.app.goo.gl/9F5eFoenw2R6Pwyf7';
@@ -77,7 +80,18 @@ export default function About() {
             </div>
             <h3 className="font-serif text-2xl font-bold mb-4">{t('about.contact_title')}</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>+212 616-855779</li>
+              <li>
+                <a
+                  href={WA_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="WhatsApp +212 616-855779"
+                  className="inline-flex items-center gap-1.5 hover:text-[#25D366] transition-colors"
+                >
+                  <WhatsAppIcon className="h-4 w-4 text-[#25D366] flex-shrink-0" />
+                  +212 616-855779
+                </a>
+              </li>
               <li>hello@daralmaghrib.com</li>
             </ul>
           </div>

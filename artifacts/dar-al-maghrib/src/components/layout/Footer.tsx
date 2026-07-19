@@ -1,6 +1,9 @@
 import { useI18n } from '@/contexts/i18n';
-import { Facebook, Instagram, Phone, MapPin, Mail } from 'lucide-react';
+import { Facebook, Instagram, MapPin, Mail } from 'lucide-react';
 import { Link } from 'wouter';
+import { WhatsAppIcon } from '@/components/WhatsAppButton';
+
+const WA_URL = 'https://wa.me/212616855779?text=Hello%20Dar%20Al%20Maghrib!%20I%20would%20like%20to%20place%20an%20order.';
 
 export function Footer() {
   const { t } = useI18n();
@@ -41,8 +44,16 @@ export function Footer() {
                 New Medina, Safi, Morocco
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-primary" />
-                +212 616-855779
+                <a
+                  href={WA_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="WhatsApp +212 616-855779"
+                  className="inline-flex items-center gap-2 hover:text-[#25D366] transition-colors"
+                >
+                  <WhatsAppIcon className="h-4 w-4 text-[#25D366] flex-shrink-0" />
+                  +212 616-855779
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />

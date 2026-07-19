@@ -2,7 +2,10 @@ import { useEffect, useState } from 'react';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { MessageSquare, Phone, Mail, Send, MapPin, Navigation, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, Send, MapPin, Navigation, CheckCircle2 } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/WhatsAppButton';
+
+const WA_URL = 'https://wa.me/212616855779?text=Hello%20Dar%20Al%20Maghrib!%20I%20would%20like%20to%20place%20an%20order.';
 
 const GMAPS_URL = 'https://maps.app.goo.gl/9F5eFoenw2R6Pwyf7';
 const GMAPS_EMBED = 'https://maps.google.com/maps?q=32.2901579,-9.2321418&z=16&output=embed';
@@ -55,7 +58,16 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg">Phone</h3>
-                    <p className="text-muted-foreground">+212 616-855779</p>
+                    <a
+                      href={WA_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label="WhatsApp +212 616-855779"
+                      className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-[#25D366] transition-colors"
+                    >
+                      <WhatsAppIcon className="h-4 w-4 text-[#25D366] flex-shrink-0" />
+                      +212 616-855779
+                    </a>
                     <p className="text-sm text-muted-foreground mt-1">Available during opening hours</p>
                   </div>
                 </div>
@@ -105,10 +117,10 @@ export default function Contact() {
             </div>
 
             <div className="bg-card p-8 rounded-2xl border border-border shadow-sm text-center">
-              <MessageSquare className="w-10 h-10 text-primary mx-auto mb-4" />
+              <WhatsAppIcon className="w-10 h-10 text-[#25D366] mx-auto mb-4" />
               <h3 className="font-serif text-2xl font-bold mb-2">WhatsApp Us</h3>
               <p className="text-muted-foreground mb-6">The fastest way to reach our support team.</p>
-              <a href="https://wa.me/212512345678" target="_blank" rel="noreferrer">
+              <a href={WA_URL} target="_blank" rel="noreferrer">
                 <Button className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white">
                   Message on WhatsApp
                 </Button>
