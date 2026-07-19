@@ -9,7 +9,7 @@ export default function About() {
     <Layout>
       {/* Hero */}
       <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=1600&auto=format&fit=crop')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-[url('/dishes/about-hero-medina.jpg')] bg-cover bg-center">
           <div className="absolute inset-0 bg-black/70"></div>
         </div>
         <div className="relative z-10 text-center px-4">
