@@ -1,0 +1,75 @@
+Generate a completely new AI video for the landing page.
+
+Do NOT use stock footage, placeholder videos, or footage from online libraries.
+
+Create a fully AI-generated cinematic video inspired by the authentic city of Safi, Morocco.
+
+Video Specifications:
+- Duration: 30 seconds
+- Resolution: 4K (or Full HD if 4K is not available)
+- Format: MP4 (H.264)
+- 16:9 landscape
+- 24–30 FPS
+- Muted (no audio)
+- Seamlessly loopable
+- Optimized for web playback as a fullscreen hero background
+
+Style:
+- Ultra-realistic (not cartoon or fantasy)
+- Cinematic quality
+- Warm, vibrant colors
+- Bright daylight and golden hour lighting
+- Smooth, slow cinematic camera movements
+- Natural lighting
+- Premium tourism-quality visuals
+
+The video should tell the story of traditional Safi through scenes such as:
+
+• Aerial view of the historic city overlooking the Atlantic Ocean
+• The Old Medina with narrow white-and-blue streets
+• Ksar El Bahr (Portuguese Sea Castle)
+• Ocean waves crashing against the cliffs
+• The Corniche promenade
+• Traditional pottery workshops
+• Ceramic artisans shaping clay by hand
+• Colorful pottery displayed in local shops
+• The famous fishing port with blue fishing boats
+• Fishermen unloading fresh seafood
+• Traditional Moroccan doors and architecture
+• Palm trees moving gently in the ocean breeze
+• Families walking through the Medina
+• Beautiful panoramic views of Safi at sunset
+• Moroccan flags moving in the wind
+• Warm sunlight illuminating the old city
+• Authentic Moroccan atmosphere full of life and heritage
+
+The mood should feel:
+- Authentic
+- Welcoming
+- Traditional
+- Peaceful
+- Elegant
+- Luxurious
+- Proud of Moroccan heritage
+
+Avoid:
+- Night scenes
+- Dark color grading
+- Heavy shadows
+- Modern skyscrapers
+- Busy traffic
+- Empty streets
+- Generic cities
+- Unrealistic AI artifacts
+- Text, captions or logos
+- Fast camera movements
+
+The final result should immediately transport visitors to the heart of Safi and create the feeling that they are about to enjoy authentic homemade Moroccan cuisine.
+
+Once the AI video is generated:
+
+- Replace the current landing page background video.
+- Keep the existing hero text, buttons, animations and layout unchanged.
+- Use only a light dark overlay (15–20%) to preserve text readability while allowing visitors to clearly appreciate the scenery.
+- Do not modify any other part of the website.
+- Stop and wait for my approval before publishing.
