@@ -23,8 +23,27 @@ export default function Home() {
     <Layout>
       {/* Hero Section */}
       <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center">
-          <div className="absolute inset-0 bg-black/60 dark:bg-black/80"></div>
+        <div className="absolute inset-0">
+          {/* Cinematic background video — Safi, Morocco */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=2069&auto=format&fit=crop"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/videos/safi-hero.mp4" type="video/mp4" />
+            {/* Fallback: static background image */}
+            <img
+              src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=2069&auto=format&fit=crop"
+              alt="Safi Morocco"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </video>
+          {/* Dark overlay 45% */}
+          <div className="absolute inset-0 bg-black/45 dark:bg-black/65"></div>
         </div>
         
         <div className="container relative z-10 text-center px-4">
