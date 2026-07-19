@@ -92,7 +92,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const clearCart = async () => {
     if (token) {
-      await clearCartMutation.mutateAsync({});
+      await clearCartMutation.mutateAsync();
       refetch();
     } else {
       setLocalCart([]);

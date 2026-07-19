@@ -1,0 +1,93 @@
+5:15:26 PM: Netlify Build                                                 
+5:15:26 PM: ────────────────────────────────────────────────────────────────
+5:15:26 PM: ​
+5:15:26 PM: ❯ Version
+5:15:26 PM:   @netlify/build 36.1.5
+5:15:26 PM: ​
+5:15:26 PM: ❯ Flags
+5:15:26 PM:   accountId: 6a5cbdc6187ccd7e2d3f28c3
+5:15:26 PM:   baseRelDir: true
+5:15:26 PM:   buildId: 6a5ccde2ee7c5a535c464e04
+5:15:26 PM:   deployId: 6a5ccde2ee7c5a535c464e06
+5:15:26 PM:   packagePath: artifacts/dar-al-maghrib
+5:15:26 PM: ​
+5:15:26 PM: ❯ Current directory
+5:15:26 PM:   /opt/build/repo
+5:15:26 PM: ​
+5:15:26 PM: ❯ Config file
+5:15:26 PM:   No config file was defined: using default values.
+5:15:26 PM: ​
+5:15:26 PM: ❯ Context
+5:15:26 PM:   production
+5:15:26 PM: ​
+5:15:26 PM: Build command from Netlify app                                
+5:15:26 PM: ────────────────────────────────────────────────────────────────
+5:15:26 PM: ​
+5:15:26 PM: $ pnpm run build
+5:15:27 PM: > workspace@0.0.0 build /opt/build/repo
+5:15:27 PM: > pnpm run typecheck && pnpm -r --if-present run build
+5:15:27 PM: > workspace@0.0.0 typecheck /opt/build/repo
+5:15:27 PM: > pnpm run typecheck:libs && pnpm -r --filter "./artifacts/**" --filter "./scripts" --if-present run typecheck
+5:15:27 PM: > workspace@0.0.0 typecheck:libs /opt/build/repo
+5:15:27 PM: > tsc --build
+5:15:31 PM: Scope: 4 of 9 workspace projects
+5:15:31 PM: artifacts/api-server typecheck$ tsc -p tsconfig.json --noEmit
+5:15:31 PM: artifacts/dar-al-maghrib typecheck$ tsc -p tsconfig.json --noEmit
+5:15:31 PM: artifacts/mockup-sandbox typecheck$ tsc -p tsconfig.json --noEmit
+5:15:35 PM: artifacts/api-server typecheck: Done
+5:15:35 PM: scripts typecheck$ tsc -p tsconfig.json --noEmit
+5:15:36 PM: scripts typecheck: Done
+5:15:37 PM: artifacts/mockup-sandbox typecheck: Done
+5:15:39 PM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/contexts/auth.tsx(38,5): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; retry: false; }' but required in type 'UseQueryOptions<User, ErrorType<void>, User, readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/contexts/cart.tsx(40,5): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<Cart, ErrorType<unknown>, Cart, readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/contexts/cart.tsx(95,43): error TS2345: Argument of type '{}' is not assignable to parameter of type 'void'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/admin.tsx(20,52): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<DashboardStats, ErrorType<unknown>, DashboardStats, readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/admin.tsx(139,48): error TS2322: Type '{ children: string; variant: string; }' is not assignable to type 'IntrinsicAttributes & ButtonHTMLAttributes<HTMLButtonElement>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck:   Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonHTMLAttributes<HTMLButtonElement>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/admin.tsx(140,46): error TS2322: Type '{ children: string; variant: string; }' is not assignable to type 'IntrinsicAttributes & ButtonHTMLAttributes<HTMLButtonElement>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck:   Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonHTMLAttributes<HTMLButtonElement>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/admin.tsx(141,51): error TS2322: Type '{ children: string; variant: string; }' is not assignable to type 'IntrinsicAttributes & ButtonHTMLAttributes<HTMLButtonElement>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck:   Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonHTMLAttributes<HTMLButtonElement>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/admin.tsx(142,48): error TS2322: Type '{ children: string; variant: string; }' is not assignable to type 'IntrinsicAttributes & ButtonHTMLAttributes<HTMLButtonElement>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck:   Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonHTMLAttributes<HTMLButtonElement>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/admin.tsx(143,49): error TS2322: Type '{ children: string; variant: string; }' is not assignable to type 'IntrinsicAttributes & ButtonHTMLAttributes<HTMLButtonElement>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck:   Property 'variant' does not exist on type 'IntrinsicAttributes & ButtonHTMLAttributes<HTMLButtonElement>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/admin/coupons.tsx(19,5): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<Coupon[], ErrorType<unknown>, Coupon[], readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/admin/customers.tsx(16,5): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<User[], ErrorType<unknown>, User[], readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/admin/menu.tsx(19,5): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<MenuItem[], ErrorType<unknown>, MenuItem[], readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/admin/offers.tsx(19,5): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<Offer[], ErrorType<unknown>, Offer[], readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/admin/orders.tsx(19,5): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<Order[], ErrorType<unknown>, Order[], readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/dashboard.tsx(17,37): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<User, ErrorType<void>, User, readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/dashboard.tsx(18,43): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<Order[], ErrorType<unknown>, Order[], readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/dashboard.tsx(19,49): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<MenuItem[], ErrorType<unknown>, MenuItem[], readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/menu-item.tsx(22,5): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<MenuItem, ErrorType<unknown>, MenuItem, readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/menu-item.tsx(26,5): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<Review[], ErrorType<unknown>, Review[], readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/order-tracking.tsx(13,5): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; refetchInterval: number; }' but required in type 'UseQueryOptions<Order, ErrorType<unknown>, Order, readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: src/pages/orders.tsx(17,54): error TS2741: Property 'queryKey' is missing in type '{ enabled: boolean; }' but required in type 'UseQueryOptions<Order[], ErrorType<unknown>, Order[], readonly unknown[]>'.
+5:15:39 PM: artifacts/dar-al-maghrib typecheck: Failed
+5:15:39 PM: /opt/build/repo/artifacts/dar-al-maghrib:
+5:15:39 PM:  ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL  @workspace/dar-al-maghrib@0.0.0 typecheck: `tsc -p tsconfig.json --noEmit`
+5:15:39 PM: Exit status 2
+5:15:39 PM:  ELIFECYCLE  Command failed with exit code 2. (https://ntl.fyi/exit-code-2)
+5:15:39 PM:  ELIFECYCLE  Command failed with exit code 2. (https://ntl.fyi/exit-code-2)
+5:15:39 PM: ​
+5:15:39 PM: "build.command" failed                                        
+5:15:39 PM: ────────────────────────────────────────────────────────────────
+5:15:39 PM: ​
+5:15:39 PM:   Error message
+5:15:39 PM:   Command failed with exit code 2: pnpm run build (https://ntl.fyi/exit-code-2)
+5:15:39 PM: ​
+5:15:39 PM:   Error location
+5:15:39 PM:   In Build command from Netlify app:
+5:15:39 PM:   pnpm run build
+5:15:39 PM: ​
+5:15:39 PM:   Resolved config
+5:15:39 PM:   build:
+5:15:39 PM:     command: pnpm run build
+5:15:39 PM:     commandOrigin: ui
+5:15:39 PM:     publish: /opt/build/repo/dist/public
+5:15:39 PM:     publishOrigin: ui
+5:15:39 PM: Build failed due to a user error: Build script returned non-zero exit code: 2
+5:15:39 PM: Failing build: Failed to build site
+5:15:39 PM: Finished processing build request in 24.858s

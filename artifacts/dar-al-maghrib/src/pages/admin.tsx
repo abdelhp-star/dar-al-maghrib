@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useGetStats } from '@workspace/api-client-react';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import { Users, DollarSign, ShoppingBag, Clock, Link } from 'lucide-react';
-import { Button } from 'react-day-picker';
+import { Button } from '@/components/ui/button';
 
 export default function AdminDashboard() {
   const { user, token } = useAuth();
