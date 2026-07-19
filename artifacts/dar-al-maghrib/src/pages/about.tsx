@@ -21,8 +21,8 @@ export default function About() {
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/10 rounded-3xl -z-10 transform -rotate-3"></div>
               <img 
-                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop" 
-                alt="Moroccan spices" 
+                src="/dishes/about-legacy.jpg" 
+                alt="Traditional Moroccan dish" 
                 className="w-full h-[500px] object-cover rounded-2xl shadow-lg border border-border"
               />
             </div>
