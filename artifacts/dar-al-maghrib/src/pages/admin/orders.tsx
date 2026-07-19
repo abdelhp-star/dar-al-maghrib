@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/contexts/auth';
 import { useAdminGetOrders, useAdminUpdateOrderStatus } from '@workspace/api-client-react';
-import { Layout } from '@/components/layout/Layout';
-import { useLocation, Link } from 'wouter';
+import { AdminLayout } from '@/components/admin/AdminLayout';
+import { useLocation } from 'wouter';
 import { OrderStatusUpdateStatus } from '@workspace/api-client-react';
 import { toast } from 'sonner';
 
@@ -26,7 +26,7 @@ export default function AdminOrders() {
       await updateStatus.mutateAsync({ id, data: { status } });
       toast.success(`Order #${id} marked as ${status.replace('_', ' ')}`);
       refetch();
-    } catch (err) {
+    } catch {
       toast.error('Failed to update order status');
     }
   };
@@ -34,39 +34,34 @@ export default function AdminOrders() {
   const statusOptions = ['pending', 'accepted', 'preparing', 'out_for_delivery', 'delivered', 'cancelled'] as OrderStatusUpdateStatus[];
 
   return (
-    <Layout>
-      <div className="bg-card border-b border-border py-4 mb-8">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <h1 className="font-serif text-2xl font-bold">Order Management</h1>
-          <Link href="/admin" className="text-primary hover:underline text-sm font-medium">Back to Admin</Link>
-        </div>
-      </div>
+    <AdminLayout title="Orders">
+      <div className="p-6 space-y-4">
+        <h1 className="font-serif text-2xl font-bold">Order Management</h1>
 
-      <div className="container mx-auto px-4 pb-20">
-        <div className="flex gap-2 mb-6 overflow-x-auto pb-2">
-          <button 
+        <div className="flex gap-2 overflow-x-auto pb-1">
+          <button
             onClick={() => setFilter('')}
-            className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap ${filter === '' ? 'bg-primary text-white' : 'bg-muted hover:bg-muted/80'}`}
+            className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${filter === '' ? 'bg-primary text-white' : 'bg-muted hover:bg-muted/80'}`}
           >
-            All Orders
+            All
           </button>
           {statusOptions.map(status => (
-            <button 
+            <button
               key={status}
               onClick={() => setFilter(status)}
-              className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap capitalize ${filter === status ? 'bg-primary text-white' : 'bg-muted hover:bg-muted/80'}`}
+              className={`px-4 py-1.5 rounded-full text-sm font-medium whitespace-nowrap capitalize transition-colors ${filter === status ? 'bg-primary text-white' : 'bg-muted hover:bg-muted/80'}`}
             >
               {status.replace('_', ' ')}
             </button>
           ))}
         </div>
 
-        <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
+        <div className="bg-card rounded-xl border border-border overflow-hidden shadow-sm">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-border bg-muted/50">
-                  <th className="p-4 font-bold text-sm text-muted-foreground">Order ID</th>
+                  <th className="p-4 font-bold text-sm text-muted-foreground">Order</th>
                   <th className="p-4 font-bold text-sm text-muted-foreground">Date</th>
                   <th className="p-4 font-bold text-sm text-muted-foreground">Customer</th>
                   <th className="p-4 font-bold text-sm text-muted-foreground">Total</th>
@@ -83,13 +78,13 @@ export default function AdminOrders() {
                       <p className="font-medium text-sm">{order.customerName}</p>
                       <p className="text-xs text-muted-foreground">{order.customerPhone}</p>
                     </td>
-                    <td className="p-4 font-bold text-primary">${order.total.toFixed(2)}</td>
+                    <td className="p-4 font-bold text-primary">{order.total.toFixed(2)} MAD</td>
                     <td className="p-4 text-sm capitalize">{order.paymentMethod.replace('_', ' ')}</td>
                     <td className="p-4 text-center">
-                      <select 
+                      <select
                         value={order.status}
-                        onChange={(e) => handleStatusChange(order.id, e.target.value as OrderStatusUpdateStatus)}
-                        className="bg-transparent border border-input rounded p-1 text-sm capitalize font-medium cursor-pointer focus:ring-1 focus:ring-ring"
+                        onChange={e => handleStatusChange(order.id, e.target.value as OrderStatusUpdateStatus)}
+                        className="bg-transparent border border-input rounded px-2 py-1 text-sm capitalize font-medium cursor-pointer focus:ring-1 focus:ring-ring"
                       >
                         {statusOptions.map(s => (
                           <option key={s} value={s}>{s.replace('_', ' ')}</option>
@@ -106,6 +101,6 @@ export default function AdminOrders() {
           )}
         </div>
       </div>
-    </Layout>
+    </AdminLayout>
   );
 }

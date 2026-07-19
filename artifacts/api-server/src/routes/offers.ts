@@ -5,10 +5,13 @@ import { authenticate, requireAdmin } from "../middlewares/auth";
 
 const router = Router();
 
-// GET /api/offers
+// GET /api/offers — returns active offers; pass ?all=true to include inactive (admin)
 router.get("/offers", async (req, res) => {
   try {
-    const offers = await db.select().from(offersTable).where(eq(offersTable.active, true)).orderBy(desc(offersTable.createdAt));
+    const includeAll = req.query.all === "true";
+    const offers = await db.select().from(offersTable)
+      .where(includeAll ? undefined : eq(offersTable.active, true))
+      .orderBy(desc(offersTable.createdAt));
     res.json(offers);
   } catch (err) {
     req.log.error(err);

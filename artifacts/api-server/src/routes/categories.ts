@@ -5,9 +5,10 @@ import { authenticate, requireAdmin } from "../middlewares/auth";
 
 const router = Router();
 
-// GET /api/categories — returns only active categories
+// GET /api/categories — returns active categories; pass ?all=true to include inactive (admin)
 router.get("/categories", async (req, res) => {
   try {
+    const includeAll = req.query.all === "true";
     const categories = await db.select({
       id: categoriesTable.id,
       name: categoriesTable.name,
@@ -18,7 +19,9 @@ router.get("/categories", async (req, res) => {
       sortOrder: categoriesTable.sortOrder,
       active: categoriesTable.active,
       itemCount: sql<number>`(SELECT COUNT(*) FROM menu_items WHERE category_id = ${categoriesTable.id} AND available = true)::int`,
-    }).from(categoriesTable).where(eq(categoriesTable.active, true)).orderBy(categoriesTable.sortOrder);
+    }).from(categoriesTable)
+      .where(includeAll ? undefined : eq(categoriesTable.active, true))
+      .orderBy(categoriesTable.sortOrder);
     res.json(categories);
   } catch (err) {
     req.log.error(err);

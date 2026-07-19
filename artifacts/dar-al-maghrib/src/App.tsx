@@ -30,6 +30,7 @@ import AdminMenu from '@/pages/admin/menu';
 import AdminCustomers from '@/pages/admin/customers';
 import AdminCoupons from '@/pages/admin/coupons';
 import AdminOffers from '@/pages/admin/offers';
+import AdminCategories from '@/pages/admin/categories';
 
 const queryClient = new QueryClient();
 
@@ -52,11 +53,12 @@ function Router() {
       
       {/* Admin */}
       <Route path="/admin" component={AdminDashboard} />
-      <Route path="/admin/orders" component={AdminOrders} />
       <Route path="/admin/menu" component={AdminMenu} />
+      <Route path="/admin/categories" component={AdminCategories} />
+      <Route path="/admin/offers" component={AdminOffers} />
+      <Route path="/admin/orders" component={AdminOrders} />
       <Route path="/admin/customers" component={AdminCustomers} />
       <Route path="/admin/coupons" component={AdminCoupons} />
-      <Route path="/admin/offers" component={AdminOffers} />
       
       <Route component={NotFound} />
     </Switch>
