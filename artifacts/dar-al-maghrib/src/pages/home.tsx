@@ -31,16 +31,9 @@ export default function Home() {
             loop
             playsInline
             preload="auto"
-            poster="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=2069&auto=format&fit=crop"
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source src="/videos/safi-hero.mp4" type="video/mp4" />
-            {/* Fallback: static background image */}
-            <img
-              src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=2069&auto=format&fit=crop"
-              alt="Safi Morocco"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
           </video>
           {/* Overlay 15–20% so city visuals stay bright */}
           <div className="absolute inset-0 bg-black/20 dark:bg-black/40"></div>
